@@ -20,7 +20,7 @@ This portfolio is divided into modular project directories. Each folder contains
 
 | Project Directory | Cloud Provider | Key Technologies | Focus Area |
 | :--- | :--- | :--- | :--- |
-| **`/Entra-ID-IAM-Hardening`** | Microsoft Azure | Entra ID, PIM, Conditional Access | Remediation of standing Global Admin privileges, JIT access enforcement, and tenant default hardening.|
+| **`/EntraID-IAM-Hardening`** | Microsoft Azure | Entra ID, PIM, Conditional Access | Remediation of standing Global Admin privileges, JIT access enforcement, and tenant default hardening.|
 ---
 
 **How to Navigate This Repository**
