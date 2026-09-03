@@ -45,8 +45,8 @@ Audit the current Privileged Identity Management (PIM) assignments to identify w
 ### Observation
 The audit reveals two active Global Administrators (`ahad@sopilot.site` and `breakglass@sopilot.site`) with permanent assignments (no start/end time limits). This violates the Principle of Least Privilege.
 
-![Initial PIM Active Assignments](NoITGA)
-![Secondary PIM Active Assignments](NoITGA_2)
+![Initial PIM Active Assignments](NoITGA.png)
+![Secondary PIM Active Assignments](PIMJJ.png)
 
 ---
 
@@ -65,12 +65,12 @@ Conditional Access Policies (CAP) act as if/then statements for authentication. 
 4. **Target resources:** Select **All cloud apps**.
 5. **Grant:** Select **Require multifactor authentication**.
 
-![Configuring Conditional Access](CAPMFA)
+![Configuring Conditional Access](CAPMFA.png)
 
 ### Result & Analysis
 The policy is enabled. Sign-in logs confirm that interactive logins by targeted roles are successfully evaluated and challenged for MFA.
 
-![Policy Evaluation in Logs](CAPAPPLIEDREPORTR)
+![Policy Evaluation in Logs](CAPAPPLIEDREPORTR.png)
 
 ---
 
@@ -87,8 +87,8 @@ Assigning high-level roles to standard security groups masks individual accounta
 2. Locate `IT Department`.
 3. Select and Delete.
 
-![Group Before Deletion](BeforeITDEPT)
-![Deleting the Over-Privileged Group](deletingITDEPT)
+![Group Before Deletion](BeforeITDEPT.png)
+![Deleting the Over-Privileged Group](deletingITDEPT.png)
 
 ---
 
@@ -108,9 +108,9 @@ Instead of having admin rights 24/7, users operate as standard employees. When t
 ### Result & Analysis
 Zero permanent active assignments remain for these users. They are now listed under the **Eligible assignments** tab.
 
-![Eligible Roles for IT](onlyeligiblerolesit)
-![JJ's Eligible Status](JJGA)
-![Chris's Eligible Status](ChrisGA)
+![Eligible Roles for IT](onlyeligiblerolesit.png)
+![JJ's Eligible Status](JJGA.png)
+![Chris's Eligible Status](ChrisGA.png)
 
 ---
 
@@ -124,16 +124,16 @@ If JIT is working correctly, a user attempting an admin action without elevating
 
 ### Implementation Steps & Results
 1. **The Block (Negative Test):** `JJ@sopilot.site` attempts to access restricted Azure panels without activating PIM. Result: **Error 401: You don't have access**.
-   ![Access Blocked](JJSigninblocked)
+   ![Access Blocked](JJSigninblocked.png)
 
 2. **The Request:** JJ navigates to PIM > **My roles** and clicks **Activate** for `User Administrator`. They enter the required justification: *"I want to create new onboarding employees"* and request a 2-hour window.
-   ![PIM Activation Screen](PIMJJ)
+   ![PIM Activation Screen](PIMJJ.png)
 
 3. **The Approval:** The Global Admin reviews the pending request in the **Approve requests** queue and clicks Approve.
-   ![PIM Approval Queue](GlobalAdminAPPROVE)
+   ![PIM Approval Queue](GlobalAdminAPPROVE.png)
 
 4. **The Execution (Positive Test):** JJ's session elevates. They successfully access the `Create new user` panel.
-   ![Successful Admin Access](AfterApproval)
+   ![Successful Admin Access](AfterApproval.png)
 
 ---
 
@@ -152,7 +152,7 @@ Navigate to **Identity > Users > User settings** and configure the following:
 * `Users can create security groups` ➔ **No**
 * `Guest user access restrictions` ➔ **Restricted to properties and memberships of their own directory objects**
 
-![Hardened User Settings](Usersettings)
+![Hardened User Settings](Usersettings.png)
 
 ---
 
