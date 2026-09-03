@@ -16,8 +16,6 @@ A hands-on cloud security lab demonstrating **Identity and Access Management (IA
 8. [Key Cloud Identity Concepts](#key-cloud-identity-concepts)
 9. [Configuration Quick Reference](#configuration-quick-reference)
     
-10.[JSON Code for Conditional Access Policy](#json-code)   
-
 ---
 
 ## Architecture & Scenario Overview
@@ -190,42 +188,3 @@ Search > Privileged Identity Management > Approve requests > Microsoft Entra rol
 
 ---
 
-##json-code
-```text
-<details>
-<summary><b>View CAP-MFA-COMPULSORY-ADMIN.json Configuration File (Click to expand)</b></summary>
-
-```json
-{
-  "@odata.context": "[https://graph.microsoft.com/beta/$metadata#identity/conditionalAccess/policies/$entity](https://graph.microsoft.com/beta/$metadata#identity/conditionalAccess/policies/$entity)",
-  "id": "7cf56a33-fa3c-4ee7-8144-2c024487f60c",
-  "displayName": "CAP-MFA-COMPULSORY-ADMIN",
-  "state": "enabledForReportingButNotEnforced",
-  "conditions": {
-    "clientAppTypes": ["all"],
-    "applications": {
-      "includeApplications": ["All"],
-      "excludeApplications": []
-    },
-    "users": {
-      "includeUsers": [],
-      "excludeUsers": [
-        "91949331-cb68-4004-a0e1-58d56eda1770",
-        "15842573-cb0e-45fd-97e9-e497b587d0af"
-      ],
-      "includeRoles": [
-        "62e90394-69f5-4237-9190-012177145e10",
-        "fe930be7-5e62-47db-91af-98c3a49a38b1",
-        "194ae4cb-b126-40b2-bd5b-6091b380977d",
-        "892c5842-a9a6-463a-8041-72aa08ca3cf6",
-        "ac434307-12b9-4fa1-a708-88bf58caabc1"
-      ]
-    }
-  },
-  "grantControls": {
-    "operator": "OR",
-    "builtInControls": ["mfa"]
-  }
-}
-
----
