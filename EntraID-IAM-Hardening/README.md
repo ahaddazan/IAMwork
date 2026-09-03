@@ -68,7 +68,7 @@ Conditional Access Policies (CAP) act as if/then statements for authentication. 
 ![Configuring Conditional Access](CAPMFA.png)
 
 ### Result & Analysis
-The policy is enabled. Sign-in logs confirm that interactive logins by targeted roles are successfully evaluated and challenged for MFA.
+The policy is currently Report-only but will be set to on in a real world setting. Sign-in logs confirm that interactive logins by targeted roles are successfully evaluated and challenged for MFA.
 
 ![Policy Evaluation in Logs](CAPAPPLIEDREPORTR.png)
 
