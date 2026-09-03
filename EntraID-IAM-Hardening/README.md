@@ -15,6 +15,7 @@ A hands-on cloud security lab demonstrating **Identity and Access Management (IA
 7. [Task 6 — Tenant-Wide Default Lockdown](#task-6--tenant-wide-default-lockdown)
 8. [Key Cloud Identity Concepts](#key-cloud-identity-concepts)
 9. [Configuration Quick Reference](#configuration-quick-reference)
+    
 10.[JSON Code for Conditional Access Policy](#json-code)   
 
 ---
